@@ -1,0 +1,167 @@
+.login{
+    text-align: center;
+    background: white;
+    width: 800px;
+    margin: 20px auto 0 auto;
+    padding: 50px;
+    border-radius: 4px;
+    
+}
+.username, .password{
+    font-size: 20px;
+    font-weight: 500;
+}
+.input{
+    width: 300px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    font-size: 18px;
+    margin-top: 8px;
+    height: auto;
+}
+.login-button{
+    padding: 10px 30px;
+    border-radius: 7px;
+    background-color: darkcyan;
+    color: white;
+    margin-top: 3px;
+    border: 1px solid darkcyan;
+    margin-left: 450px
+}
+.username-label{
+    text-align: center;
+    margin-top:-10%;
+    margin-right: 150px;
+}
+.password{
+    margin-top: 80px;
+}
+
+.bank-data{
+    text-align: center;
+    width: 500px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border-color: black;
+    border-width: 10px;
+    border-right: 1px solid lightgray;
+}
+.currency-data{
+    margin: 10px auto;
+    display: block;
+    width: 150px;
+    height: 25px;
+    border-radius: 4px; 
+
+ }
+.data{
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.data-ele{
+    justify-self: left;
+    font-family: sans-serif;
+    
+}
+.pbank-data{
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-start;
+    align-items: center;
+    height: 500PX;
+}
+.payment-selections{
+    margin-left: 20px;
+}
+.payment-types{
+    margin: 10px auto;
+    display: block;
+    width: 150px;
+    height: 25px;
+    border-radius: 4px;
+}
+.payment-types-label,.currency-label{
+    font-family: sans-serif;
+}
+
+.payment-types-data{
+    margin: 10px auto;
+    display: block;
+    width: 150px;
+    height: 25px;
+    border-radius: 4px;
+}
+.regular-checkbox {
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 5px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+.regular-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+.regular-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}
+.checkboxfont{
+    font-size: 16px;
+    margin-left: 2px;
+    font-family: sans-serif;
+}
+
+.checkbox{
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    margin-right: 15px;
+}
+.payment-type-checkboxes{
+    display: flex;
+    margin-top: 20px;
+}
+/* .multiselect-dropdown .dropdown-btn {
+    display: inline-block;
+    border: 1px solid #adadad;
+    width: 100pt !important;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.5 !important;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 4px;
+} */
+.multi_select_box{
+    width:400px;
+    margin:30px auto;
+}
+.multi_select_box select{
+    width: 40%;
+}
+
+.currency_checkbox{
+    margin-bottom: 100px;
+}

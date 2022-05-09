@@ -1,0 +1,18 @@
+<!-- <div>
+    <div class = "pending-label-data">Pending bank Details:</div>
+<div class = "pending-banks">
+
+</div>
+<div class = "partner-label-data">All partner banks:</div>
+<div class = "partner-banks">
+
+</div> -->
+<h2> multiselect dropdown with checkbox </h2>
+<ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)">
+</ng-multiselect-dropdown>

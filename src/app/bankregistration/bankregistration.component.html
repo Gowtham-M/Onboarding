@@ -1,0 +1,70 @@
+
+<head>
+    
+    <link rel="stylesheet" type="text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.css">
+
+</head>
+<div class = "login">
+        <div style = "float: left;">
+            <img [src] = 'icici' width="150px" height = "37px">
+        </div>
+       
+        <div class = 'password'>
+            <div class="username-label">BIC: </div>
+             <input type = 'text'  class="input" [(ngModel)] = 'BANKID'  
+              (keyup.enter)="searchItem($event)" >
+         </div>
+         <!-- <div *ngIf = 'invalid'>
+             Invalid BIC ID!
+         </div> -->
+        <div class = "pbank-data" *ngIf = "isDataAvailable">
+            <div class = 'bank-data'>
+                <div class = 'data'> <div class = "data-ele">BIC:</div> <div class = "data-ele">{{bankData.bic}}</div></div>
+                <div class = 'data'><div class = "data-ele">Institution name:</div><div class = "data-ele"> {{bankData.institute_name}}</div></div> 
+                <div class = 'data'><div class = "data-ele">Branch information:</div><div class = "data-ele">{{bankData.br_info}}</div></div>
+                <div class = 'data'><div class = "data-ele">Address lane:</div><div class = "data-ele">{{bankData.address.add_line}}</div></div>
+                <div class = 'data'><div class = "data-ele">Town name:</div><div class = "data-ele">{{bankData.address.town_name}}</div></div>
+                <div class = 'data'><div class = "data-ele">Country subdivision:</div><div class = "data-ele">{{bankData.address.country_subdiv}}</div></div>
+                <div class = 'data'><div class = "data-ele">Postal code:</div><div class = "data-ele">{{bankData.address.post_code}}</div></div>
+                <div class = 'data'><div class = "data-ele">Country name:</div><div class = "data-ele">{{bankData.address.cntry_name}}</div></div>
+                <div class = 'data'><div class = "data-ele">Country code:</div><div class = "data-ele">{{bankData.address.cntry_code}}</div></div>
+                <div class = 'data'><div class = "data-ele">Office type:</div><div class = "data-ele"> {{bankData.ofc_type}}</div></div> 
+            </div>
+            <div class = "payment-selections">
+                
+                    <div class = "currency-label">
+                        Currency:
+                    </div>
+                <div class = "currency-checkbox">
+                    <ng-multiselect-dropdown
+                        [placeholder]="'Select Currencies'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList_Currency"
+                        [(ngModel)]="selectedItems_Currency"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)">
+                    </ng-multiselect-dropdown>
+                </div>
+                     <div class = "payment-types-label">
+                        Payment Rails:
+                    </div>
+                    <div class = 'payment-rail-checkboxes'>
+                        <ng-multiselect-dropdown
+                        [placeholder]="'Select Payment Rails'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList_PaymentRails"
+                        [(ngModel)]="selectedItems_Rails"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)">
+                    </ng-multiselect-dropdown>
+                    
+                </div>
+            </div>
+        </div>
+    
+        
+         <!-- <a routerLink  = '/payment-types' routerLinkActive = 'active'> -->
+             <input type = 'submit' value = 'Continue' class = 'login-button' (click) = 'add_partner_bank()' *ngIf = "isDataAvailable">
+            <!-- </a> -->
+</div>
+

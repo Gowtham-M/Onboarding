@@ -1,0 +1,52 @@
+.pending-banks{
+    border:2px #000 solid; padding:5px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    margin:auto;
+    background-color: white;
+    border-radius: 5px;
+    /* float: left 20px; */
+
+}
+.partner-banks{
+    border:2px #000 solid; padding:5px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    margin:auto;
+    background-color: white;
+    border-radius: 5px;
+    /* float: right; */
+}
+.pending-label-data{
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+.partner-label-data{
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center; 
+    margin-top: 50px;
+}
+/* :host ::ng-deep .multiselect-dropdown .dropdown-btn {
+	display: inline-block;
+	border: 1px solid #adadad;
+	width: 0%;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-align: left;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border-radius: 4px;
+} */
+/* .x{
+    width: 40%;
+    height: 50px;
+} */

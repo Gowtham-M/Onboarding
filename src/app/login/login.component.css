@@ -1,0 +1,42 @@
+.login{
+    text-align: center;
+    background: white;
+    width: 300px;
+    margin: 130px auto;
+    padding: 50px;
+    border-radius: 4px;
+}
+.username, .password{
+    font-size: 20px;
+    font-weight: 500;
+    position:relative;
+}
+.input{
+    width: 90%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    font-size: 18px;
+    float: left;
+    margin-top: 5px;
+}
+.login-button{
+    padding: 10px 30px;
+    border-radius: 7px;
+    background-color: darkcyan;
+    color: white;
+    margin-top: 30px;
+    border: 1px solid darkcyan;
+}
+.username-label{
+    text-align: left;
+}
+.password{
+    margin-top: 80px;
+}
+i{
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: gray;
+}

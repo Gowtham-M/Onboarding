@@ -1,0 +1,20 @@
+
+
+<div class = 'payments'>
+    <div class = 'selectpayments'>Select Payment Types</div>
+    <div class = 'checkbox'>
+        <input type = 'checkbox' class = 'regular-checkbox' [(ngModel)] = 'checkbox_arr[0]'>
+        <span class = 'checkboxfont'  >IMPS</span>
+    </div><br>
+    <div class = 'checkbox'>
+        <input type = 'checkbox' class = 'regular-checkbox' [(ngModel)] = 'checkbox_arr[1]'>
+        <span class = 'checkboxfont'  >RTGS</span>
+    </div><br>
+    <div class = 'checkbox'>
+        <input type = 'checkbox' class = 'regular-checkbox' [(ngModel)] = 'checkbox_arr[2]'>
+        <span class = 'checkboxfont'  >NEFT</span>
+    </div><br>
+    <div>{{checkbox_arr[0]}}</div>
+<div class = 'button-alignment'><button class = "submit" (click) = 'payments()'>Submit</button> <button class="addPaymentTypes">Add Payment types</button></div>
+</div>
+<!-- <input type="checkbox" [(ngModel)]="isChecked" (change)="checkValue(isChecked?'A':'B')" /> -->
