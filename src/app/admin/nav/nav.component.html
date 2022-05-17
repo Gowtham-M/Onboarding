@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logout</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" style="margin-left: 20%;" [routerLink]="['/admin/banks']">Banks</a>
+          <a class="nav-link" style="margin-left: 20%;" [routerLink]="['/admin/users']">Users</a>
+          <a class="nav-link" style="margin-left: 20%;" [routerLink]="['/admin/rules']">Rules</a>
+        </div>
+        <span class="navbar-text" style="margin-left: 75%;">
+          <a class="nav-link" style="color: white; font-weight: bold;">{{ user?.username }}</a>
+        </span>
+      </div>
+    </div>
+</nav>

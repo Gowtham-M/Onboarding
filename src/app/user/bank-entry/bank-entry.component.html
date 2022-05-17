@@ -1,0 +1,103 @@
+<app-user-nav [user]="user"></app-user-nav>
+<div class="row" style="margin-top: 3%;">
+    <form [formGroup]="entryForm">
+    <div class="card col-4" style="margin-left: 32%;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="row">
+                    <span class="col-4"><strong>Bic</strong></span>
+                    <span class="col-6">
+                        <input type="text" class="form-control" id="bic" formControlName="bic">
+                    </span>
+                    <span class="col-2">
+                        <button type="button" class="btn btn-outline-primary" (click)="getBank(entryForm.value.bic)">Get</button>
+                    </span>
+                </div>
+            </li>
+        
+            <li class="list-group-item" *ngIf="!isHidden">
+                <div class="row">
+                    <span class="col-4"><strong>Inst. name</strong></span>
+                    <span class="col-8">{{ bank?.institute_name }}</span>
+                </div>
+            </li>
+
+            <li class="list-group-item" *ngIf="!isHidden">
+                <div class="row">
+                    <span class="col-4"><strong>Branch info</strong></span>
+                    <span class="col-8">{{ bank?.br_info }}</span>
+                </div>
+            </li>
+
+            <li class="list-group-item" *ngIf="!isHidden">
+                <div class="row">
+                    <span class="col-4"><strong>Address</strong></span>
+                    <span class="col-8">
+                        {{ bank?.address.add_line }},<br>
+                        {{ bank?.address.town_name }},&nbsp;
+                        {{ bank?.address.country_subdiv }},<br>
+                        {{ bank?.address.post_code }},<br>
+                        {{ bank?.address.cntry_name }},&nbsp;
+                        {{ bank?.address.cntry_code }}.
+                    </span>
+                </div>
+            </li>
+
+            <li class="list-group-item" *ngIf="!isHidden">
+                <div class="row">
+                    <span class="col-4"><strong>Currency</strong></span>
+                    <span class="currency-checkbox col-8">
+                        <!-- replce with multidropdown -->
+                        <ng-multiselect-dropdown
+                        [placeholder]="'Select Currencies'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList_Currency"
+                        [(ngModel)]="selectedItems_Currency"
+                        [ngModelOptions]="{standalone: true}">
+                    </ng-multiselect-dropdown>
+                    </span>
+                </div>
+            </li>
+
+            <li class="list-group-item" *ngIf="!isHidden">
+                <div class="row">
+                    <span class="col-4"><strong>Pay mode</strong></span>
+                    <span class="payment-rail-checkboxes col-8">
+                        <!-- replce with multidropdown -->
+                        <ng-multiselect-dropdown
+                            [placeholder]="'Select Payment Rails'"
+                            [settings]="dropdownSettings"
+                            [data]="dropdownList_PaymentRails"
+                            [(ngModel)]="selectedItems_Rails"
+                            [ngModelOptions]="{standalone: true}">
+                        </ng-multiselect-dropdown>
+                    </span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="card-body" *ngIf="!isHidden">
+            <button type="submit" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#saveModal"
+            style="margin-left: 32%; width: 150px;">Register</button>
+        </div>
+
+        <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saveLabel">Registering...</h5>
+                    </div>
+                    <div class="modal-body">
+                        You are trying to register "{{ bank?.institute_name }}".<br>
+                        Do you want to continue?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cancel()">No</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="save()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

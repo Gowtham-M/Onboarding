@@ -1,0 +1,54 @@
+<app-admin-nav [user]="user"></app-admin-nav>
+<div class="row" style="margin-top: 5%;">
+    <div class="col-4" style="margin-left: 8%;">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Is Admin</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users ">
+                <td>{{ user.username }}</td>
+                <td>{{ user.isAdmin }}</td>
+                <td>{{ user.status }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4" style="margin-left: 12%;">
+        <form [formGroup]="userForm" (submit)="save()">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control form-control-lg" id="username" formControlName="username" placeholder="Name" required>
+            </div>
+          
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control form-control-lg" id="password" formControlName="password" placeholder="******" required>
+            </div>
+          
+            <div class="mb-3 row">
+                <label for="status" class="col-4 col-form-label">Status</label>
+                <div class="col-8">
+                    <select class="form-select form-select-lg" id="status" formControlName="status">
+                        <option value="P">Pending</option>
+                        <option value="A">Approve</option>
+                        <option value="S">Suspend</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="admin" formControlName="isAdmin">
+                <label class="form-check-label" for="admin">&nbsp;&nbsp;Is Admin</label>
+            </div>
+          
+            <div class="mb-3 row">
+                <button type="submit" class="btn btn-primary col-4" style="margin: 5% 0 0 2%;">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

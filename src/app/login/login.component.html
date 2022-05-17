@@ -1,0 +1,21 @@
+<div class="row" style="margin-top: 10%;">
+    <div class="col-4" style="margin-left: 32%;">
+        <form [formGroup]="loginForm" (submit)="login()">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control form-control-lg" id="username" formControlName="username" placeholder="Name" required>
+            </div>
+          
+            <div class="mb-3" style="margin-top: 5%;">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control form-control-lg" id="password" formControlName="password" placeholder="******" required>
+            </div>
+          
+            <div class="mb-3 row">
+                <button type="submit" class="btn btn-primary col-sm-4" style="margin: 10% 0 0 32%;">Sign in</button>
+            </div>
+  
+            <div class="mb-3" style="margin-top: 5%; color: red;" *ngIf="isInvalid">Username or password is incorrect. Please try again.</div>
+        </form>
+    </div>
+</div>

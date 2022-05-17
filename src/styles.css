@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+.multiselect-dropdown .dropdown-btn {
+    display:  flow-root list-item!important;
+    border: 1px solid #000 !important;
+    width: 200pt !important;
+    padding: 4px 10px !important;
+    margin-bottom: 20px!important;
+    font-weight: 400!important;
+    line-height: 2!important;
+    text-align: left!important;
+    vertical-align: middle!important;
+    cursor: pointer!important;
+    background-image: none!important;
+    border-radius: 3px !important;
+    font-family: sans-serif!important;
+
+  }
+  .selected-item-container .selected-item {
+    border: 1px solid #337ab7;
+    margin-right: 4px!important;
+    background: #0d6efd !important;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+    max-width: 100px
+  }

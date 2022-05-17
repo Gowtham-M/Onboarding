@@ -1,0 +1,61 @@
+<app-admin-nav [user]="user"></app-admin-nav>
+<div style="margin-top: 3%;">
+    <form [formGroup]="selection" (submit)="display()">
+        <div class="input-group">
+            <span style="width: 150px;">
+                <select class="form-select" formControlName="filter">
+                    <option value="A">Approved</option>
+                    <option value="P">Pending</option>
+                    <option value="S">Suspended</option>
+                </select>
+            </span>
+            <button type="submit" class="btn btn-outline-primary">Filter</button>
+        </div> 
+    </form>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Inst. name</th>
+            <th>Branch info</th>
+            <th>Address</th>
+            <th>Currency</th>
+            <th>Pay mode</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody aria-setsize="3">
+            <tr *ngFor="let bank of banks">
+                <td style="width: 16.5%;">{{ bank.institute_name }}</td>
+                <td style="width: 16.5%;">{{ bank.br_info }}</td>
+                <td style="width: 16.5%;">{{ bank.address.add_line }}...</td>
+                <td style="width: 16.5%;">{{ bank.currency }}</td>
+                <td style="width: 16.5%;">{{ bank.paymentRails }}</td>
+                <td style="width: 17.5%;">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" style="width: 80px;" (click)="redirect(bank.bic, '0')" class="btn btn-outline-primary">View</button>
+                        <button type="button" style="width: 80px;" (click)="redirect(bank.bic, '1')" class="btn btn-outline-primary">Edit</button>
+                        <button type="button" style="width: 80px;" (click)="getCurrent(bank.bic, bank.institute_name)" *ngIf="bank.status != 'A'"
+                        data-bs-toggle="modal" data-bs-target="#approveModal" class="btn btn-outline-primary">Approve</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="approveLabel">Approval initiated...</h5>
+                </div>
+                <div class="modal-body">
+                    Do you wish to approve "{{ instName }}"?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="approve()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
